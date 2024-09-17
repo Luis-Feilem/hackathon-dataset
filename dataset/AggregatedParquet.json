@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "cleanup_data.parquet",
 				"container": "hackathon-aggregated"
 			},
 			"compressionCodec": "snappy"
