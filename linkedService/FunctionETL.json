@@ -1,13 +1,12 @@
 {
 	"name": "FunctionETL",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureFunction",
 		"typeProperties": {
-			"functionAppUrl": "https://func-engd-westeu-003.azurewebsites.net",
-			"authentication": "Anonymous",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEY1NkNCQ0VDLUJBNDktNDMwRi04QjM3LTI3MjRFODNFRTU0Ql83ODQyNzU0Yi02YWVkLTQyNzgtOTQ0YS1lZDY2MGNlNzMyY2MiDQp9"
+			"functionAppUrl": "https://etlpipelinemetadata.azurewebsites.net",
+			"authentication": "Anonymous"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
