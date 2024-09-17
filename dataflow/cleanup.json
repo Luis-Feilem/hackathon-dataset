@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DefinedParquet",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
