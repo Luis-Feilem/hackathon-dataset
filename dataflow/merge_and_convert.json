@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "merge_and_convert",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
