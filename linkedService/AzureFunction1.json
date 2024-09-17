@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureFunction",
 		"typeProperties": {
-			"functionAppUrl": "https://func-engd-westeu-003.azurewebsites.net",
+			"functionAppUrl": "https://func-engd-westeu-003.azurewebsites.net/api/http_trigger_001?code=R__h2H-_oWLqMxkcroCtnYQu0qZhMzGnYC1saQAJ_a7hAzFutUAN5Q%3D%3D",
 			"authentication": "Anonymous"
 		}
 	}
