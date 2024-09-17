@@ -75,8 +75,10 @@
 				"merge sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
+				"     partitionFileNames:['merged_and_converted.parquet'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> convert"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> convert"
 			]
 		}
 	}
