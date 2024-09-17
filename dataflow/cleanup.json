@@ -61,8 +61,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> source1",
-				"source1 filter(contains(array(toString(columns())),!isNull(#item))\r",
-				") ~> nulls",
+				"source1 filter(contains(array(toString(columns())),!isNull(#item))) ~> nulls",
 				"negativeAge select(mapColumn(",
 				"          age,",
 				"          job,",
@@ -92,8 +91,10 @@
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
+				"     partitionFileNames:['cleanup_data.parquet'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
