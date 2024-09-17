@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "source-raw",
 	"properties": {
 		"activities": [
 			{
@@ -117,6 +117,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Ingestion"
+		},
 		"annotations": []
 	}
 }
