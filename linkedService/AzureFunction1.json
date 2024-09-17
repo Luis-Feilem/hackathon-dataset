@@ -1,11 +1,13 @@
 {
 	"name": "AzureFunction1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureFunction",
 		"typeProperties": {
-			"functionAppUrl": "https://func-engd-westeu-003.azurewebsites.net/api/http_trigger_001?code=R__h2H-_oWLqMxkcroCtnYQu0qZhMzGnYC1saQAJ_a7hAzFutUAN5Q%3D%3D",
-			"authentication": "Anonymous"
+			"functionAppUrl": "https://func-engd-westeu-003.azurewebsites.net",
+			"authentication": "Anonymous",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEY1NkNCQ0VDLUJBNDktNDMwRi04QjM3LTI3MjRFODNFRTU0Ql9iZDY2ZjA0ZS1kYWQwLTQ3OTAtYmI2Ny00ZWM0YmY3M2UxMzUiDQp9"
 		}
 	}
 }
