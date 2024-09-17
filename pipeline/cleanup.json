@@ -46,15 +46,15 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"functionName": "http_trigger1",
+					"functionName": "http_trigger_001",
 					"body": {
 						"value": "@activity('cleanup dataflow').output",
 						"type": "Expression"
 					},
-					"method": "POST"
+					"method": "GET"
 				},
 				"linkedServiceName": {
-					"referenceName": "FunctionETL",
+					"referenceName": "AzureFunction2",
 					"type": "LinkedServiceReference"
 				}
 			}
