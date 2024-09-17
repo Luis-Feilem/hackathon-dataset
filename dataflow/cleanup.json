@@ -23,10 +23,13 @@
 			],
 			"transformations": [
 				{
-					"name": "filter1"
+					"name": "nulls"
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "negativeAge"
 				}
 			],
 			"scriptLines": [
@@ -59,8 +62,8 @@
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> source1",
 				"source1 filter(contains(array(toString(columns())),!isNull(#item))\r",
-				") ~> filter1",
-				"filter1 select(mapColumn(",
+				") ~> nulls",
+				"negativeAge select(mapColumn(",
 				"          age,",
 				"          job,",
 				"          marital,",
@@ -85,6 +88,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
+				"nulls filter(greaterOrEqual(age, 0)) ~> negativeAge",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
