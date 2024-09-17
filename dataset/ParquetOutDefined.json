@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "merge_and_convert.parquet",
 				"container": "hackathon-defined"
 			},
 			"compressionCodec": "snappy"
