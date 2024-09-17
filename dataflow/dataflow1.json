@@ -1,0 +1,83 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "RawA",
+						"type": "DatasetReference"
+					},
+					"name": "sourceA"
+				},
+				{
+					"dataset": {
+						"referenceName": "RawB",
+						"type": "DatasetReference"
+					},
+					"name": "sourceB"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ParquetOutDefined",
+						"type": "DatasetReference"
+					},
+					"name": "convert"
+				}
+			],
+			"transformations": [
+				{
+					"name": "merge"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          age as double,",
+				"          job as string,",
+				"          marital as string,",
+				"          education as string,",
+				"          default as string,",
+				"          housing as string,",
+				"          loan as string,",
+				"          contact as string,",
+				"          month as string,",
+				"          day_of_week as string,",
+				"          unique_id as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> sourceA",
+				"source(output(",
+				"          duration as string,",
+				"          campaign as string,",
+				"          pdays as string,",
+				"          previous as string,",
+				"          poutcome as string,",
+				"          {emp.var.rate} as string,",
+				"          {cons.price.idx} as string,",
+				"          {cons.conf.idx} as string,",
+				"          euribor3m as string,",
+				"          {nr.employed} as string,",
+				"          y as string,",
+				"          unique_id as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> sourceB",
+				"sourceA, sourceB join(sourceA@unique_id == sourceB@unique_id,",
+				"     joinType:'outer',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> merge",
+				"merge sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> convert"
+			]
+		}
+	}
+}
