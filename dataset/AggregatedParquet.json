@@ -1,0 +1,19 @@
+{
+	"name": "AggregatedParquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "hackathon-aggregated"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
